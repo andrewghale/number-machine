@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <title>Number Machine</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Number Machine</h1>
+        <form class="main-form">
+            <label class="label" for="guessField">
+                <input type="number" id="guessField" class="guessField" onfocus="this.value=''"/>
+                <input type="submit" value="Submit"
+                class="guessSubmit button" id="submitguess" />
+            </label>
+        </form>
+        <p id="output">
+            Enter a number above!
+        </p>
+        <!-- <pre class="battery-log">
+            {"charged":"100%","cycles":130}
+        </pre> -->
+    </div>
+    <script src="js/anime.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

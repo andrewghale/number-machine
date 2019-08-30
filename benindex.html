@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <title>Number Machine</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-family:
+                'Trebuchet MS',
+                'Lucida Sans Unicode',
+                'Lucida Grande',
+                'Lucida Sans',
+                Arial,
+                sans-serif;
+        }
+        body {
+            margin: 2rem;
+            padding: 2rem;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Machine</h1>
+
+    <form id="form">
+        <label for="guessField">
+            <input type="number" id="guessField" class="guessField" />
+            <input type="submit" value="Submit"
+            class="guessSubmit" id="submitguess" />
+        </label>
+    </form>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("form").onsubmit = function(e){
+            let guessField = document.getElementById("guessField");
+
+            if (typeof(guessField) !== "number") {
+                console.log("Not a number!");
+                return;
+            } else if (guessField.toString().length >= 10) {
+                console.log("Number is too large!");
+                return;
+            } else if (guessField % 1 != 0) {
+                console.log("Whole numbers only!");
+                return;
+            };
+
+            let denom = DivisibleBy(guessField);
+
+            let total = "Divisible by"
+
+            // total = total.slice(0, -1);
+            // const replacement = " and";
+            // total = total.replace(/,([^,]*)$/,replacement+'$1');
+            if (total == "Divisible by 1") {
+                total = "This is a prime number";
+            };
+            console.log(total);
+            document.getElementById("output").innerHTML = total;
+
+            e.preventDefault();
+
+        }
+
+        const DivisibleBy = (divby) => {
+
+            divby = parseInt(divby);
+
+            let i;
+            let arr = [];
+            let denom = [];
+            for (i = 1; i < divby; i++) {
+                if (divby % i === 0) {
+                    denom.push(i);
+                };
+            };
+
+            return denom;
+        };
+    </script>
+</body>
+</html>

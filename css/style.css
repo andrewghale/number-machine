@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(45deg, #c9de96 0%,#8ab66b 44%,#398235 100%);
+}
+
+h1 {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+@keyframes button-click {
+    0% {
+        transform: scale(1);}
+    50% {
+        transform: scale(1.1);}
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container {
+    width: 700px;
+    height: 700px;
+    min-height: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+
+form {
+    margin: 5rem 0;
+}
+
+.label {
+    display: flex;
+}
+
+
+.guessField {
+    padding: 1rem;
+    margin-right: 1rem;
+    font-size: 3rem;
+    border: none;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    width: 100px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s;
+    outline: none;
+}
+
+#output {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 5px;
+    transition: all 1s;
+    font-size: 2rem;
+}
+
+.submitted {
+    background-color: rgb(194, 18, 18);
+    color: white;
+    animation: button-click 0.15s;
+    transition: 0s all;
+}
