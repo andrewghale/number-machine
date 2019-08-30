@@ -28,7 +28,6 @@ button.addEventListener('click', function(e) {
 const divCalculator = (inputValue) => {
     let total = "Divisible by"
     let i;
-    let arr = [];
     for (i = 1; i < inputValue; i++) {
         if (inputValue % i === 0) {
             total += ` ${i},`;
@@ -49,6 +48,7 @@ const commaReplace = (andComma) => {
     andComma = andComma.replace(/,([^,]*)$/,replacement+'$1');
     return andComma;
 };
+
 
 
 $(document).ready(function(){
