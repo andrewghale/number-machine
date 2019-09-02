@@ -8,18 +8,47 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Number Machine</h1>
-        <form class="main-form">
-            <label class="label" for="guessField">
-                <input type="number" id="guessField" class="guessField" onfocus="this.value=''"/>
-                <input type="submit" value="Submit"
-                class="guessSubmit button" id="submitguess" />
-            </label>
-        </form>
-        <p id="output">
-            Enter a number!
-        </p>
+    <div class="page-container">
+        <div class="container">
+            <img class="title" src="/img/title.svg" alt="Number Machine">
+            <form class="main-form">
+                <label class="label" for="guessField">
+                    <input type="number" id="guessField" class="guessField" onfocus="this.value=''"/>
+                    <input type="submit" value="Submit"
+                    class="guessSubmit button" id="submitguess" />
+                </label>
+            </form>
+            <p id="output">
+                Enter a number!
+            </p>
+        </div>
+        <div class="container">
+            <div class="explain-container">
+                <h3 class="sub-title">How (Some Of) It Works</h3>
+                <div class="code-container">
+                    <p id="capitalize-code" class="code">
+                        const <span class="red-code">divCalculator</span> = (<span class="white-code">inputValue</span>) => {
+                            <br>
+                            &ensp; let <span class="blue-code">total</span> = "Divisible by"
+                            <br>
+                            &ensp; let i;
+                            <br>
+                            &ensp; for (i = 1; i < <span class="white-code">inputValue</span>; i++) {
+                                <br>
+                                &ensp; &ensp; if (<span class="white-code">inputValue</span> % i === 0) {
+                                    <br>
+                                    &ensp; &ensp; <span class="blue-code">total</span> += ` ${i},`;
+                                    <br>
+                                    &ensp; };
+                                <br>
+                            };
+                            return <span class="blue-code">total</span>;
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="js/anime.min.js"></script>
     <script src="js/jquery.js"></script>
