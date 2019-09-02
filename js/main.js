@@ -11,8 +11,8 @@ button.addEventListener('click', function(e) {
 
     const inputValue = parseInt(guess.value);
     // stops any massive numbers
-    if (inputValue.toString().length >= 10) {
-        document.getElementById("output").innerHTML = "Number is too large!";
+    if (inputValue.toString().length >= 10 || inputValue < 2) {
+        document.getElementById("output").innerHTML = "Numbers between 2 and 999999999";
         return;
     };
 
@@ -20,9 +20,6 @@ button.addEventListener('click', function(e) {
     const finalValue = commaReplace(andComma);
 
     document.getElementById("output").innerHTML = finalValue;
-
-    const formReset = document.getElementById('main-form');
-    formReset.reset();
 });
 
 const divCalculator = (inputValue) => {
@@ -35,6 +32,9 @@ const divCalculator = (inputValue) => {
     };
     if (total == "Divisible by 1,") {
         total = "This is a prime number!!";
+    } else {
+        let regex = /Divisible by 1,/gi;
+        total = total.replace(regex, 'Divisible by');
     };
     return total;
 }
@@ -49,13 +49,11 @@ const commaReplace = (andComma) => {
     return andComma;
 };
 
-
-
 $(document).ready(function(){
     $(".button").click(function(){
         $(".button").addClass("submitted");
         setTimeout(function(){
             $('.button').removeClass('submitted');
-        },1000);
+        },500);
     });
 });
