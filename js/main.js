@@ -16,38 +16,57 @@ button.addEventListener('click', function(e) {
         return;
     };
 
-    const andComma = divCalculator(inputValue);
-    const finalValue = commaReplace(andComma);
+    // array of divisors
+    const value = divCalculator(inputValue);
+
+    // turns the array into a string
+    let finalValue = value.join(', ');
+    if ( finalValue == [] ) {
+        finalValue = "This is a prime number!";
+    }
+
+    // line below not currently needed
+    // const finalValue = commaReplace(andComma);
 
     document.getElementById("output").innerHTML = finalValue;
 });
 
 const divCalculator = (inputValue) => {
-    let total = "Divisible by"
-    let i;
-    for (i = 1; i < inputValue; i++) {
+    // create empty array
+    let total = [];
+
+    // loop over each number to find divisors
+    for (let i = 0; i < inputValue; i++) {
         if (inputValue % i === 0) {
-            total += ` ${i},`;
+            total.push(i);
         };
     };
-    if (total == "Divisible by 1,") {
-        total = "This is a prime number!!";
-    } else {
-        let regex = /Divisible by 1,/gi;
-        total = total.replace(regex, 'Divisible by');
-    };
+
+    // remove the number 1 from the array
+    total.shift();
+
     return total;
 }
 
-const commaReplace = (andComma) => {
-    //remove last character, a comma
-    andComma = andComma.slice(0, -1);
-    // define a replacement
-    const replacement = " and";
-    // add replacement to last comma
-    andComma = andComma.replace(/,([^,]*)$/,replacement+'$1');
-    return andComma;
-};
+    // if (total == "Divisible by 1,") {
+    //     total = "This is a prime number!!";
+    // } else {
+    //     let regex = /Divisible by 1,/gi;
+    //     total = total.replace(regex, 'Divisible by');
+    // };
+
+
+    // function below not currently needed
+
+    // const commaReplace = (andComma) => {
+    //     //remove last character, a comma
+    //     andComma = andComma.slice(0, -1);
+    //     // define a replacement
+    //     const replacement = " and";
+    //     // add replacement to last comma
+    //     andComma = andComma.replace(/,([^,]*)$/,replacement+'$1');
+    //     return andComma;
+    // };
 
 $(document).ready(function(){
     $(".button").click(function(){
