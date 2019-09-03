@@ -50,7 +50,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .container {
     width: 700px;
-    height: 700px;
+    height: fit-content;
     min-height: 500px;
     margin: 2rem auto;
     padding: 2rem;
@@ -90,14 +90,25 @@ form {
     outline: none;
 }
 
-#output {
+.output-label {
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+    border-radius: 5px 5px 0px 0px;
+    width: fit-content;
+}
+
+#output-list, #output-pairs, #output-reduced, #output-prime {
+    margin-top: 0;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem;
-    /* margin: 3rem; */
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 0px 5px 5px 5px;
     font-size: 2rem;
 }
+
 
 .submitted {
     background-color: rgb(194, 18, 18);

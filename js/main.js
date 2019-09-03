@@ -12,23 +12,47 @@ button.addEventListener('click', function(e) {
     const inputValue = parseInt(guess.value);
     // stops any massive numbers
     if (inputValue.toString().length >= 10 || inputValue < 2) {
-        document.getElementById("output").innerHTML = "Numbers between 2 and 999999999";
+        document.getElementById("output-reduced").innerHTML = "Numbers between 2 and 999999999";
+        document.getElementById("output-list").innerHTML = "Numbers between 2 and 999999999";
         return;
     };
+
+    // prime number test
+    const testPrime = (inputValue) => {
+        if ( inputValue === 1 ) {
+            return false;
+        } else if ( inputValue === 2 ) {
+            return true;
+        } else {
+            for ( var x = 2; x < inputValue; x++ ) {
+                if ( inputValue % x === 0 ) {
+                    return false;
+                }
+            }
+        return true;
+        }
+    }
 
     // array of divisors
     const value = divCalculator(inputValue);
 
     // turns the array into a string
-    let finalValue = value.join(', ');
-    if ( finalValue == [] ) {
-        finalValue = "This is a prime number!";
+    listOutput = value.join(', ');
+
+    // reduces array to sum of divisors
+    const reducedOutput = (value) => {
+        let reducedOutput = (value.reduce((acc, curr) => acc + curr));
+        return reducedOutput;
     }
 
     // line below not currently needed
     // const finalValue = commaReplace(andComma);
 
-    document.getElementById("output").innerHTML = finalValue;
+    // document.getElementById("output-prime").innerHTML = testPrime(value);
+    document.getElementById("output-prime").innerHTML = testPrime(inputValue);
+    document.getElementById("output-reduced").innerHTML = reducedOutput(value);
+    document.getElementById("output-list").innerHTML = listOutput;
+    // document.getElementById("output-sqrt").innerHTML = sqrtOutput;
 });
 
 const divCalculator = (inputValue) => {
@@ -36,14 +60,14 @@ const divCalculator = (inputValue) => {
     let total = [];
 
     // loop over each number to find divisors
-    for (let i = 0; i < inputValue; i++) {
+    for (let i = 0; i <= inputValue; i++) {
         if (inputValue % i === 0) {
             total.push(i);
         };
     };
 
     // remove the number 1 from the array
-    total.shift();
+    // total.shift();
 
     return total;
 }
