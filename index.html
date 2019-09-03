@@ -39,7 +39,7 @@
             <div class="explain-container">
                 <h3 class="sub-title">How (Some Of) It Works</h3>
                 <div class="code-container">
-                    <p id="capitalize-code" class="code">
+                    <!-- <p id="capitalize-code" class="code">
                         const <span class="red-code">divCalculator</span> = (<span class="white-code">inputValue</span>) => {
                             <br>
                             &ensp; let <span class="blue-code">total</span> = "Divisible by"
@@ -56,6 +56,25 @@
                                 <br>
                             };
                             return <span class="blue-code">total</span>;
+                        }
+                    </p> -->
+                    <p id="capitalize-code" class="code">
+                        const <span class="red-code">divCalculator</span> = (<span class="white-code">inputValue</span>) => {
+
+                            <br>
+                            &ensp; let <span class="blue-code">total</span> = [];
+                            <br>
+                            &ensp; for (let i = 0; i <= <span class="white-code">inputValue</span>; i++) {
+                                <br> &ensp; &ensp; if (<span class="white-code">inputValue</span> % i === 0) {
+                                    <br>
+                                    &ensp; &ensp; &ensp; <span class="blue-code">total</span>.push(i);
+                                    <br>
+                                &ensp; &ensp; };
+                                <br>
+                            &ensp; };
+                            <br>
+                            &ensp; return <span class="blue-code">total</span>;
+                            <br>
                         }
                     </p>
                 </div>

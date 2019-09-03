@@ -58,17 +58,12 @@ button.addEventListener('click', function(e) {
 const divCalculator = (inputValue) => {
     // create empty array
     let total = [];
-
     // loop over each number to find divisors
     for (let i = 0; i <= inputValue; i++) {
         if (inputValue % i === 0) {
             total.push(i);
         };
     };
-
-    // remove the number 1 from the array
-    // total.shift();
-
     return total;
 }
 
