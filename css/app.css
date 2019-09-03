@@ -303,6 +303,14 @@ template {
 [hidden] {
   display: none; }
 
+@keyframes button-click {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
 * {
   box-sizing: border-box; }
 
@@ -330,79 +338,65 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-@keyframes button-click {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
-
-.title {
-  width: 100%; }
-
 .page-container {
   display: flex; }
-
-.container {
-  width: 700px;
-  height: fit-content;
-  min-height: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 5px; }
-
-form {
-  display: flex;
-  justify-content: center;
-  margin: 3rem 0; }
-
-.label {
-  display: flex; }
-
-.guessField {
-  padding: 1rem;
-  margin-right: 1rem;
-  font-size: 3rem;
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 450px; }
-
-.button {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  width: 100px;
-  background-color: greenyellow;
-  border-radius: 5px;
-  border: 2px solid black;
-  cursor: pointer;
-  transition: all 1s;
-  outline: none; }
-
-.output-label {
-  padding: 1rem;
-  font-size: 1.3rem;
-  border: 2px solid black;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-bottom: none;
-  border-radius: 5px 5px 0px 0px;
-  width: fit-content; }
-
-#output-list, #output-pairs, #output-reduced, #output-prime {
-  margin-top: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 1rem;
-  border: 2px solid black;
-  border-radius: 0px 5px 5px 5px;
-  font-size: 2rem; }
-
-.submitted {
-  background-color: #c21212;
-  color: white;
-  animation: button-click 0.15s;
-  transition: 0s all; }
+  .page-container .container {
+    width: 700px;
+    height: fit-content;
+    min-height: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px; }
+    .page-container .container .title {
+      width: 100%; }
+    .page-container .container .main-form {
+      display: flex;
+      justify-content: center;
+      margin: 3rem 0; }
+      .page-container .container .main-form .label {
+        display: flex; }
+        .page-container .container .main-form .label .guessField {
+          padding: 1rem;
+          margin-right: 1rem;
+          font-size: 3rem;
+          border: 2px solid black;
+          border-radius: 5px;
+          width: 450px; }
+        .page-container .container .main-form .label .button {
+          display: flex;
+          justify-content: center;
+          font-size: 1.5rem;
+          width: 100px;
+          background-color: greenyellow;
+          border-radius: 5px;
+          border: 2px solid black;
+          cursor: pointer;
+          transition: all 1s;
+          outline: none; }
+          .page-container .container .main-form .label .button.submitted {
+            background-color: #c21212;
+            color: white;
+            animation: button-click 0.15s;
+            transition: 0s all; }
+    .page-container .container .output-label {
+      padding: 1rem;
+      font-size: 1.3rem;
+      border: 2px solid black;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom: none;
+      border-radius: 5px 5px 0px 0px;
+      width: fit-content; }
+  .page-container #output-list,
+  .page-container #output-pairs,
+  .page-container #output-reduced,
+  .page-container #output-prime {
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 0px 5px 5px 5px;
+    font-size: 2rem; }
 
 .code {
   background-color: darkslategray;
@@ -410,7 +404,7 @@ form {
   padding: 1rem;
   width: fit-content;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 5px;
   text-align: left;
   font-family: monospace, monospace;
   letter-spacing: 0.05rem;
