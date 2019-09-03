@@ -20,16 +20,16 @@ button.addEventListener('click', function(e) {
     // prime number test
     const testPrime = (inputValue) => {
         if ( inputValue === 1 ) {
-            return false;
+            return ('false');
         } else if ( inputValue === 2 ) {
-            return true;
+            return ('true');
         } else {
             for ( var x = 2; x < inputValue; x++ ) {
                 if ( inputValue % x === 0 ) {
-                    return false;
+                    return ('false');
                 }
             }
-        return true;
+        return ('true');
         }
     }
 
@@ -44,15 +44,22 @@ button.addEventListener('click', function(e) {
         let reducedOutput = (value.reduce((acc, curr) => acc + curr));
         return reducedOutput;
     }
+    // squaring the user input
+    let squaredOutput = (inputValue * inputValue);
+
+    // square root of the user input
+    let sqrtOutput = Math.sqrt(inputValue);
+
 
     // line below not currently needed
     // const finalValue = commaReplace(andComma);
 
     // document.getElementById("output-prime").innerHTML = testPrime(value);
-    document.getElementById("output-prime").innerHTML = testPrime(inputValue);
+    document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(inputValue));
     document.getElementById("output-reduced").innerHTML = reducedOutput(value);
     document.getElementById("output-list").innerHTML = listOutput;
-    // document.getElementById("output-sqrt").innerHTML = sqrtOutput;
+    document.getElementById("output-sqrt").innerHTML = sqrtOutput;
+    document.getElementById("output-squared").innerHTML = squaredOutput;
 });
 
 const divCalculator = (inputValue) => {
@@ -66,6 +73,11 @@ const divCalculator = (inputValue) => {
     };
     return total;
 }
+
+const capitalizeFirst = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 
     // if (total == "Divisible by 1,") {
     //     total = "This is a prime number!!";
