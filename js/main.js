@@ -46,9 +46,11 @@ button.addEventListener('click', function(e) {
     }
     // squaring the user input
     let squaredOutput = (inputValue * inputValue);
+    let cubedOutput = (inputValue * inputValue * inputValue);
 
     // square root of the user input
     let sqrtOutput = Math.sqrt(inputValue);
+    let cbrtOutput = Math.cbrt(inputValue);
 
 
     // line below not currently needed
@@ -60,6 +62,8 @@ button.addEventListener('click', function(e) {
     document.getElementById("output-list").innerHTML = listOutput;
     document.getElementById("output-sqrt").innerHTML = sqrtOutput;
     document.getElementById("output-squared").innerHTML = squaredOutput;
+    document.getElementById("output-cbrt").innerHTML = cbrtOutput;
+    document.getElementById("output-cubed").innerHTML = cubedOutput;
 });
 
 const divCalculator = (inputValue) => {
