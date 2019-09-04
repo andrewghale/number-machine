@@ -44,14 +44,6 @@ button.addEventListener('click', function(e) {
         let reducedOutput = (value.reduce((acc, curr) => acc + curr));
         return reducedOutput;
     }
-    // squaring the user input
-    let squaredOutput = (inputValue * inputValue);
-    let cubedOutput = (inputValue * inputValue * inputValue);
-
-    // square root of the user input
-    let sqrtOutput = Math.sqrt(inputValue);
-    let cbrtOutput = Math.cbrt(inputValue);
-
 
     // line below not currently needed
     // const finalValue = commaReplace(andComma);
@@ -60,10 +52,10 @@ button.addEventListener('click', function(e) {
     document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(inputValue));
     document.getElementById("output-reduced").innerHTML = reducedOutput(value);
     document.getElementById("output-list").innerHTML = listOutput;
-    document.getElementById("output-sqrt").innerHTML = sqrtOutput;
-    document.getElementById("output-squared").innerHTML = squaredOutput;
-    document.getElementById("output-cbrt").innerHTML = cbrtOutput;
-    document.getElementById("output-cubed").innerHTML = cubedOutput;
+    document.getElementById("output-sqrt").innerHTML = Math.sqrt(inputValue);;
+    document.getElementById("output-squared").innerHTML = (inputValue * inputValue);
+    document.getElementById("output-cbrt").innerHTML = Math.cbrt(inputValue);
+    document.getElementById("output-cubed").innerHTML = (inputValue * inputValue * inputValue);
 });
 
 const divCalculator = (inputValue) => {
