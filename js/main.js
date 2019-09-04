@@ -58,11 +58,12 @@ button.addEventListener('click', function(e) {
     document.getElementById("output-cubed").innerHTML = (inputValue * inputValue * inputValue);
 });
 
+// This function takes an input number, creates an empty array and loops over
 const divCalculator = (inputValue) => {
     // create empty array
     let total = [];
     // loop over each number to find divisors
-    for (let i = 0; i <= inputValue; i++) {
+    for (let i = 1; i <= inputValue; i++) {
         if (inputValue % i === 0) {
             total.push(i);
         };
@@ -73,27 +74,6 @@ const divCalculator = (inputValue) => {
 const capitalizeFirst = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-
-    // if (total == "Divisible by 1,") {
-    //     total = "This is a prime number!!";
-    // } else {
-    //     let regex = /Divisible by 1,/gi;
-    //     total = total.replace(regex, 'Divisible by');
-    // };
-
-
-    // function below not currently needed
-
-    // const commaReplace = (andComma) => {
-    //     //remove last character, a comma
-    //     andComma = andComma.slice(0, -1);
-    //     // define a replacement
-    //     const replacement = " and";
-    //     // add replacement to last comma
-    //     andComma = andComma.replace(/,([^,]*)$/,replacement+'$1');
-    //     return andComma;
-    // };
 
 $(document).ready(function(){
     $(".button").click(function(){

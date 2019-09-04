@@ -1,13 +1,24 @@
 .page-container {
     display: flex;
+    justify-content: space-evenly;
+    @media screen and (max-width: $bp-desktop) {
+        flex-direction: column;
+    }
     .container {
         width: 700px;
         height: fit-content;
         min-height: 500px;
-        margin: 2rem auto;
+        margin: 2rem 1rem;
         padding: 2rem;
         background: $container-bg;
         border-radius: $border-radius;
+        @media screen and (max-width: $bp-desktop) {
+            margin: 2rem auto;
+        }
+        @media screen and (max-width: $bp-tablet) {
+            margin: 2rem;
+            width: auto;
+        }
         .title {
             width: 100%;
         }
@@ -15,8 +26,15 @@
             display: flex;
             justify-content: center;
             margin: 3rem 0;
+            @media screen and (max-width: $bp-tablet) {
+                margin: 2rem 0;
+            }
             .label {
                 display: flex;
+                justify-content: center;
+                @media screen and (max-width: $bp-tablet) {
+                    width: 100%;
+                }
                 .guessField {
                     padding: 1rem;
                     margin-right: 1rem;
@@ -24,6 +42,9 @@
                     border: 2px solid black;
                     border-radius: $border-radius;
                     width: 450px;
+                    @media screen and (max-width: $bp-tablet) {
+                        width: 350px;
+                    }
                 }
                 .button {
                     display: flex;
@@ -55,7 +76,6 @@
             width: fit-content;
         }
     }
-
 
     #output-list,
     #output-pairs,

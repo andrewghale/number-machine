@@ -339,23 +339,41 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; }
 
 .page-container {
-  display: flex; }
+  display: flex;
+  justify-content: space-evenly; }
+  @media screen and (max-width: 1200px) {
+    .page-container {
+      flex-direction: column; } }
   .page-container .container {
     width: 700px;
     height: fit-content;
     min-height: 500px;
-    margin: 2rem auto;
+    margin: 2rem 1rem;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 5px; }
+    @media screen and (max-width: 1200px) {
+      .page-container .container {
+        margin: 2rem auto; } }
+    @media screen and (max-width: 770px) {
+      .page-container .container {
+        margin: 2rem;
+        width: auto; } }
     .page-container .container .title {
       width: 100%; }
     .page-container .container .main-form {
       display: flex;
       justify-content: center;
       margin: 3rem 0; }
+      @media screen and (max-width: 770px) {
+        .page-container .container .main-form {
+          margin: 2rem 0; } }
       .page-container .container .main-form .label {
-        display: flex; }
+        display: flex;
+        justify-content: center; }
+        @media screen and (max-width: 770px) {
+          .page-container .container .main-form .label {
+            width: 100%; } }
         .page-container .container .main-form .label .guessField {
           padding: 1rem;
           margin-right: 1rem;
@@ -363,6 +381,9 @@ input[type=number]::-webkit-outer-spin-button {
           border: 2px solid black;
           border-radius: 5px;
           width: 450px; }
+          @media screen and (max-width: 770px) {
+            .page-container .container .main-form .label .guessField {
+              width: 350px; } }
         .page-container .container .main-form .label .button {
           display: flex;
           justify-content: center;

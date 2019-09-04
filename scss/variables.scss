@@ -7,6 +7,12 @@ $red-code: lightcoral;
 $blue-code: lightblue;
 $white-code: white;
 
+// Breakpoints
+$bp-desktop: 1200px;
+$bp-tablet: 770px;
+$bp-phone: 500px;
+$bp-xs: 415px;
+
 // Animations
 @keyframes button-click {
     0% {
