@@ -1,6 +1,8 @@
 .page-container {
     display: flex;
     justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
     @media screen and (max-width: $bp-desktop) {
         flex-direction: column;
     }
@@ -21,6 +23,32 @@
         }
         .title {
             width: 100%;
+        }
+        .created-by {
+            text-align: center;
+            margin: 0.5rem;
+        }
+        .github {
+            margin: 0 auto;
+            padding: 0rem 1rem;
+            display: flex;
+            border-radius: $border-radius;
+            justify-content: center;
+            background-color: $blue-code;
+            width: fit-content;
+            .github-link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                img {
+                    width: 32px;
+                    height: auto;
+                    margin-right: 1rem;
+                }
+                p {
+                    letter-spacing: 0.3rem;
+                }
+            }
         }
         .main-form {
             display: flex;
@@ -43,7 +71,7 @@
                     border-radius: $border-radius;
                     width: 450px;
                     @media screen and (max-width: $bp-tablet) {
-                        width: 350px;
+                        width: 300px;
                     }
                 }
                 .button {
