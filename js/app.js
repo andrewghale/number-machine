@@ -10606,12 +10606,14 @@ const button = document.getElementById('submitguess');
 button.addEventListener('click', function(e) {
     // prevents page from refreshing
     e.preventDefault();
-
     const inputValue = parseInt(guess.value);
     // stops any massive numbers
     if (inputValue.toString().length >= 10 || inputValue < 2) {
-        document.getElementById("output-reduced").innerHTML = "Numbers between 2 and 999999999";
-        // document.getElementById("output-list").innerHTML = "Numbers between 2 and 999999999";
+        const warning = document.querySelector(".warning");
+        warning.classList.add("show");
+        setTimeout(function(){
+            warning.classList.remove("show");
+        },3000);
         return;
     };
 
