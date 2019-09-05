@@ -9,8 +9,9 @@ button.addEventListener('click', function(e) {
     // prevents page from refreshing
     e.preventDefault();
     const inputValue = parseInt(guess.value);
+    console.log(typeof guess.value);
     // stops any massive numbers
-    if (inputValue.toString().length >= 10 || inputValue < 2 || Math.floor(inputValue) === inputValue) {
+    if (inputValue.toString().length >= 10 || inputValue < 2 || !Number.isInteger(Number(guess.value))) {
         const warning = document.querySelector(".warning");
         warning.classList.add("show");
         setTimeout(function(){
