@@ -10,7 +10,7 @@ button.addEventListener('click', function(e) {
     e.preventDefault();
     const inputValue = parseInt(guess.value);
     // stops any massive numbers
-    if (inputValue.toString().length >= 10 || inputValue < 2) {
+    if (inputValue.toString().length >= 10 || inputValue < 2 || Math.floor(inputValue) === inputValue) {
         const warning = document.querySelector(".warning");
         warning.classList.add("show");
         setTimeout(function(){
