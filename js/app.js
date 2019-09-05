@@ -10611,7 +10611,7 @@ button.addEventListener('click', function(e) {
     // stops any massive numbers
     if (inputValue.toString().length >= 10 || inputValue < 2) {
         document.getElementById("output-reduced").innerHTML = "Numbers between 2 and 999999999";
-        document.getElementById("output-list").innerHTML = "Numbers between 2 and 999999999";
+        // document.getElementById("output-list").innerHTML = "Numbers between 2 and 999999999";
         return;
     };
 
@@ -10622,8 +10622,8 @@ button.addEventListener('click', function(e) {
         } else if ( inputValue === 2 ) {
             return ('true');
         } else {
-            for ( var x = 2; x < inputValue; x++ ) {
-                if ( inputValue % x === 0 ) {
+            for ( let i = 2; i < inputValue; i++ ) {
+                if ( inputValue % i === 0 ) {
                     return ('false');
                 }
             }
@@ -10642,14 +10642,6 @@ button.addEventListener('click', function(e) {
         let reducedOutput = (value.reduce((acc, curr) => acc + curr));
         return reducedOutput;
     }
-    // squaring the user input
-    let squaredOutput = (inputValue * inputValue);
-    let cubedOutput = (inputValue * inputValue * inputValue);
-
-    // square root of the user input
-    let sqrtOutput = Math.sqrt(inputValue);
-    let cbrtOutput = Math.cbrt(inputValue);
-
 
     // line below not currently needed
     // const finalValue = commaReplace(andComma);
@@ -10658,17 +10650,18 @@ button.addEventListener('click', function(e) {
     document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(inputValue));
     document.getElementById("output-reduced").innerHTML = reducedOutput(value);
     document.getElementById("output-list").innerHTML = listOutput;
-    document.getElementById("output-sqrt").innerHTML = sqrtOutput;
-    document.getElementById("output-squared").innerHTML = squaredOutput;
-    document.getElementById("output-cbrt").innerHTML = cbrtOutput;
-    document.getElementById("output-cubed").innerHTML = cubedOutput;
+    document.getElementById("output-sqrt").innerHTML = Math.sqrt(inputValue);;
+    document.getElementById("output-squared").innerHTML = (inputValue * inputValue);
+    document.getElementById("output-cbrt").innerHTML = Math.cbrt(inputValue);
+    document.getElementById("output-cubed").innerHTML = (inputValue * inputValue * inputValue);
 });
 
+// This function takes an input number, creates an empty array and loops over
 const divCalculator = (inputValue) => {
     // create empty array
     let total = [];
     // loop over each number to find divisors
-    for (let i = 0; i <= inputValue; i++) {
+    for (let i = 1; i <= inputValue; i++) {
         if (inputValue % i === 0) {
             total.push(i);
         };
@@ -10680,33 +10673,17 @@ const capitalizeFirst = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-
-    // if (total == "Divisible by 1,") {
-    //     total = "This is a prime number!!";
-    // } else {
-    //     let regex = /Divisible by 1,/gi;
-    //     total = total.replace(regex, 'Divisible by');
-    // };
-
-
-    // function below not currently needed
-
-    // const commaReplace = (andComma) => {
-    //     //remove last character, a comma
-    //     andComma = andComma.slice(0, -1);
-    //     // define a replacement
-    //     const replacement = " and";
-    //     // add replacement to last comma
-    //     andComma = andComma.replace(/,([^,]*)$/,replacement+'$1');
-    //     return andComma;
-    // };
-
-$(document).ready(function(){
-    $(".button").click(function(){
-        $(".button").addClass("submitted");
-        setTimeout(function(){
-            $('.button').removeClass('submitted');
+$(document).ready(function() {
+    $( ".button" ).click(function() {
+        $( ".button" ).addClass( "submitted" );
+        setTimeout(function() {
+            $( '.button' ).removeClass( 'submitted' );
         },500);
+    });
+    $(".github").hover(function() {
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
     });
 });
 //# sourceMappingURL=app.js.map

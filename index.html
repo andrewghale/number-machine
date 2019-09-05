@@ -59,31 +59,52 @@
         </div>
         <div class="container">
             <div class="explain-container">
-                <h3 class="sub-title">How (Some Of) It Works</h3>
+                <h3>How (Some Of) It Works</h3>
+                <h4>Creating the array</h4>
+                <p>This function checks whether the input value can be divided by the current iteration [i] without leaving
+                    a remainder - if it can, then the number [i] is added on to the end of an array named "total".</p>
                 <div class="code-container">
-                    <p id="capitalize-code" class="code">
-                        const <span class="red-code">divCalculator</span> = (<span class="white-code">inputValue</span>) => {
-
-                            <br>
-                            &ensp; let <span class="blue-code">total</span> = [];
-                            <br>
-                            &ensp; for (let i = 0; i <= <span class="white-code">inputValue</span>; i++) {
-                                <br> &ensp; &ensp; if (<span class="white-code">inputValue</span> % i === 0) {
-                                    <br>
-                                    &ensp; &ensp; &ensp; <span class="blue-code">total</span>.push(i);
-                                    <br>
-                                &ensp; &ensp; };
-                                <br>
-                            &ensp; };
-                            <br>
-                            &ensp; return <span class="blue-code">total</span>;
-                            <br>
-                        }
-                    </p>
+                    <pre>
+                        <code class="language-javascript">
+const divCalculator = (inputValue<) => {
+    let total = [];
+    for (let i = 1; i <= inputValue; i++) {
+        if (inputValue % i === 0) {
+            total.push(i);
+        };
+    };
+    return total;
+}
+                        </code>
+                    </pre>
+                </div>
+                <h4>Prime Numbers</h4>
+                <p>This function checks whether the input value can be divided by the current iteration [i] without leaving
+                    a remainder - if it can, then the number [i] is added on to the end of an array named "total".</p>
+                <div class="code-container">
+                    <pre>
+                        <code class="language-javascript">
+const testPrime = (inputValue) => {
+    if ( inputValue === 1 ) {
+        return ('false');
+    } else if ( inputValue === 2 ) {
+        return ('true');
+    } else {
+        for ( let i = 2; i < inputValue; i++ ) {
+            if ( inputValue % i === 0 ) {
+                return ('false');
+            }
+        }
+    return ('true');
+    }
+}
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
     </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

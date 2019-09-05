@@ -13,7 +13,7 @@ button.addEventListener('click', function(e) {
     // stops any massive numbers
     if (inputValue.toString().length >= 10 || inputValue < 2) {
         document.getElementById("output-reduced").innerHTML = "Numbers between 2 and 999999999";
-        document.getElementById("output-list").innerHTML = "Numbers between 2 and 999999999";
+        // document.getElementById("output-list").innerHTML = "Numbers between 2 and 999999999";
         return;
     };
 
@@ -24,8 +24,8 @@ button.addEventListener('click', function(e) {
         } else if ( inputValue === 2 ) {
             return ('true');
         } else {
-            for ( var x = 2; x < inputValue; x++ ) {
-                if ( inputValue % x === 0 ) {
+            for ( let i = 2; i < inputValue; i++ ) {
+                if ( inputValue % i === 0 ) {
                     return ('false');
                 }
             }
@@ -75,11 +75,16 @@ const capitalizeFirst = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-$(document).ready(function(){
-    $(".button").click(function(){
-        $(".button").addClass("submitted");
-        setTimeout(function(){
-            $('.button').removeClass('submitted');
+$(document).ready(function() {
+    $( ".button" ).click(function() {
+        $( ".button" ).addClass( "submitted" );
+        setTimeout(function() {
+            $( '.button' ).removeClass( 'submitted' );
         },500);
+    });
+    $(".github").hover(function() {
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
     });
 });
