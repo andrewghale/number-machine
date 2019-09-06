@@ -329,6 +329,7 @@ pre[class*="language-"] {
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
+  letter-spacing: 0.05rem;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -336,10 +337,14 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none; }
+  @media screen and (max-width: 770px) {
+    code[class*="language-"],
+    pre[class*="language-"] {
+      font-size: 2.25vw; } }
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
+  padding: 0em 1em;
   margin: .5em 0;
   overflow: auto;
   border-radius: 0.3em; }
@@ -465,6 +470,21 @@ input[type=number]::-webkit-outer-spin-button {
   @media screen and (max-width: 1200px) {
     .page-container {
       flex-direction: column; } }
+  .page-container .coffee-ring-bottom-right {
+    position: absolute;
+    top: 1000px;
+    right: -150px; }
+    .page-container .coffee-ring-bottom-right img {
+      max-width: 500px;
+      opacity: 0.3; }
+  .page-container .coffee-ring-bottom-left {
+    position: absolute;
+    transform: rotate(180);
+    top: 1200px;
+    left: -300px; }
+    .page-container .coffee-ring-bottom-left img {
+      max-width: 500px;
+      opacity: 0.3; }
   .page-container .container {
     position: relative;
     width: 700px;
@@ -476,11 +496,11 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 5px; }
     @media screen and (max-width: 1200px) {
       .page-container .container {
-        margin: 2rem auto; } }
+        margin: 2rem auto;
+        width: 92vw; } }
     @media screen and (max-width: 770px) {
       .page-container .container {
-        margin: 2rem;
-        width: auto; } }
+        margin: 1rem; } }
     .page-container .container .title {
       width: 100%; }
     .page-container .container .created-by {
@@ -565,14 +585,7 @@ input[type=number]::-webkit-outer-spin-button {
       border-bottom: none;
       border-radius: 5px 5px 0px 0px;
       width: fit-content; }
-  .page-container #output-list,
-  .page-container #output-pairs-list,
-  .page-container #output-reduced,
-  .page-container #output-prime,
-  .page-container #output-squared,
-  .page-container #output-sqrt,
-  .page-container #output-cbrt,
-  .page-container #output-cubed {
+  .page-container .output {
     margin-top: 0;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem;
@@ -580,11 +593,22 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 0px 5px 5px 5px;
     font-size: 2rem; }
 
+.pairs-list {
+  display: flex;
+  flex-wrap: wrap; }
+  .pairs-list li {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    border-radius: 5px;
+    width: auto;
+    padding: 0.3rem 0;
+    margin: 0.4rem;
+    border: 1.5px solid black;
+    box-shadow: 0px 2px 3px 1px #d9d9d9; }
+
 .transition {
   transform: scale(1.07);
   transition: all ease-in-out 0.1s; }
-
-.test-class {
-  color: blue; }
 
 /*# sourceMappingURL=app.css.map */

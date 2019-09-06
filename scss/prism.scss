@@ -19,6 +19,11 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+javascrip
      word-break: normal;
      word-wrap: normal;
      line-height: 1.5;
+     letter-spacing: 0.05rem;
+
+    @media screen and (max-width: $bp-tablet) {
+        font-size: 2.25vw;
+    }
 
      -moz-tab-size: 4;
      -o-tab-size: 4;
@@ -32,7 +37,7 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+javascrip
 
  /* Code blocks */
  pre[class*="language-"] {
-     padding: 1em;
+     padding: 0em 1em;
      margin: .5em 0;
      overflow: auto;
      border-radius: 0.3em;

@@ -5,10 +5,15 @@
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <title>Number Machine</title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
-    <!-- <script src="js/csi.min.js"></script> -->
 </head>
 <body>
     <div class="page-container">
+        <div class="coffee-ring-bottom-right">
+            <img src="img/coffee-ring.png" alt="coffee ring">
+        </div>
+        <div class="coffee-ring-bottom-left">
+            <img src="img/coffee-ring.png" alt="coffee ring">
+        </div>
         <div class="container">
             <img class="title" src="/img/title.svg" alt="Number Machine">
             <p class="created-by">Created by Andrew Hale</p>
@@ -27,35 +32,35 @@
             </form>
             <div class="warning">Whole numbers between 2 and 999999999 only!</div>
             <div class="output-label">Is Prime?</div>
-            <p id="output-prime">
+            <p id="output-prime" class="output">
                 Enter a number above!
             </p>
             <div class="output-label">List of Divisors:</div>
-            <p id="output-list">
+            <p id="output-list" class="output">
                 Enter a number above!
             </p>
             <div class="output-label">Pairs of Divisors:</div>
-            <ul id="output-pairs-list" class="list-padding">
+            <ul id="output-pairs-list" class="pairs-list output">
                 <li>Enter a number above!</li>
             </ul>
             <div class="output-label">Sum of Divisors:</div>
-            <p id="output-reduced">
+            <p id="output-reduced" class="output">
                 Enter a number above!
             </p>
             <div class="output-label">Square Root:</div>
-            <p id="output-sqrt">
+            <p id="output-sqrt" class="output">
                 Enter a number above!
             </p>
             <div class="output-label">Squared:</div>
-            <p id="output-squared">
+            <p id="output-squared" class="output">
                 Enter a number above!
             </p>
             <div class="output-label">Cube Root:</div>
-            <p id="output-cbrt">
+            <p id="output-cbrt" class="output">
                 Enter a number above!
             </p>
             <div class="output-label">Cubed:</div>
-            <p id="output-cubed">
+            <p id="output-cubed" class="output">
                 Enter a number above!
             </p>
         </div>
