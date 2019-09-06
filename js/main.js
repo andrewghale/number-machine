@@ -9,8 +9,8 @@ button.addEventListener('click', function(e) {
     // prevents page from refreshing
     e.preventDefault();
     const inputValue = parseInt(guess.value);
-    console.log(typeof guess.value);
-    // stops any massive numbers
+    // console.log(guess.value);
+    // stops any massive numbers, also stops decimal numbers
     if (inputValue.toString().length >= 10 || inputValue < 2 || !Number.isInteger(Number(guess.value))) {
         const warning = document.querySelector(".warning");
         warning.classList.add("show");
@@ -77,6 +77,22 @@ const divCalculator = (inputValue) => {
 const capitalizeFirst = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// working on pairs of divisors
+
+var myArray = [1, 2, 4, 8, 16, 32];
+
+function firstAndLast(myArr) {
+    var firstItem = myArr[0];
+    var lastItem = myArr[myArr.length - 1];
+    var objOutput = [firstItem, lastItem];
+	myArray.shift();
+	myArray.pop();
+    return objOutput;
+}
+var display = firstAndLast(myArray);
+console.log(display, myArray);
+
 
 $(document).ready(function() {
     $( ".button" ).click(function() {

@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <title>Number Machine</title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <!-- <script src="js/csi.min.js"></script> -->
 </head>
 <body>
     <div class="page-container">
@@ -19,7 +20,7 @@
             </div>
             <form class="main-form">
                 <label class="label" for="guessField">
-                    <input type="number" id="guessField" class="guessField" onfocus="this.value=''"/>
+                    <input type="number" id="guessField" class="guessField" />
                     <input type="submit" value="Submit"
                     class="guessSubmit button" id="submitguess" />
                 </label>
@@ -67,7 +68,8 @@
                 <div class="code-container">
                     <pre>
                         <code class="language-javascript">
-const divCalculator = (inputValue<) => {
+                                <div data-include="b.html"></div>
+<!-- const divCalculator = (inputValue<) => {
     let total = [];
     for (let i = 1; i <= inputValue; i++) {
         if (inputValue % i === 0) {
@@ -75,7 +77,7 @@ const divCalculator = (inputValue<) => {
         };
     };
     return total;
-}
+} -->
                         </code>
                     </pre>
                 </div>
@@ -104,7 +106,6 @@ const testPrime = (inputValue) => {
             </div>
         </div>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

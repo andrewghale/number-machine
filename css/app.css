@@ -437,14 +437,17 @@ a {
 
 h1 {
   margin: 2rem auto;
-  text-align: center; }
+  text-align: center;
+  color: red; }
 
 h3 {
   font-size: 2rem;
   text-align: center; }
 
 h4 {
-  text-decoration: underline; }
+  text-decoration: underline;
+  font-size: 1.5rem;
+  margin: 4rem 0 0 0; }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -577,5 +580,8 @@ input[type=number]::-webkit-outer-spin-button {
 .transition {
   transform: scale(1.07);
   transition: all ease-in-out 0.1s; }
+
+.test-class {
+  color: blue; }
 
 /*# sourceMappingURL=app.css.map */

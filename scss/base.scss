@@ -23,6 +23,7 @@ a {
 h1 {
     margin: 2rem auto;
     text-align: center;
+    color: red;
 }
 
 h3 {
@@ -32,6 +33,8 @@ h3 {
 
 h4 {
     text-decoration: underline;
+    font-size: 1.5rem;
+    margin: 4rem 0 0 0;
 }
 
 input[type=number]::-webkit-inner-spin-button,

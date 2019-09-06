@@ -1,5 +1,4 @@
 "use strict";
-
 var gulp = require("gulp");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify-es").default;
@@ -11,7 +10,7 @@ var plumber = require("gulp-plumber");
 
 gulp.task("concatScripts", function () {
   return gulp
-    .src(["js/jquery.js", "js/main.js"])
+    .src(["js/jquery.js", "js/prism.js", "js/main.js"])
     .pipe(plumber())
     .pipe(maps.init())
     .pipe(concat("app.js"))

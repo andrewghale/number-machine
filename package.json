@@ -18,13 +18,13 @@
   "homepage": "https://github.com/andrewghale/number-machine#readme",
   "dependencies": {
     "gulp": "^4.0.2",
+    "gulp-file-include": "^2.1.0",
     "prismjs": "^1.17.1"
   },
   "devDependencies": {
     "commander": "^2.20.0",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
-    "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
