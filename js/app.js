@@ -10644,6 +10644,16 @@ button.addEventListener('click', function(e) {
     // array of divisors
     const value = divCalculator(inputValue);
 
+    // pairs of divisors
+    const outputPairs = (value) => {
+        let output = [];
+        for (let i = 0; i <= ((value.length / 2) - 1); i++) {
+            let lastItem = value[(value.length) - 1 - [i]];
+            output.push(["<li>" + value[i] + " and " + lastItem + "</li>"]);
+        };
+        return output.join("");
+    }
+
     // turns the array into a string
     listOutput = value.join(', ');
 
@@ -10660,6 +10670,7 @@ button.addEventListener('click', function(e) {
     document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(inputValue));
     document.getElementById("output-reduced").innerHTML = reducedOutput(value);
     document.getElementById("output-list").innerHTML = listOutput;
+    document.getElementById("output-pairs-list").innerHTML = outputPairs(value);
     document.getElementById("output-sqrt").innerHTML = Math.sqrt(inputValue);;
     document.getElementById("output-squared").innerHTML = (inputValue * inputValue);
     document.getElementById("output-cbrt").innerHTML = Math.cbrt(inputValue);
@@ -10682,22 +10693,6 @@ const divCalculator = (inputValue) => {
 const capitalizeFirst = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// working on pairs of divisors
-
-var myArray = [1, 2, 4, 8, 16, 32];
-
-function firstAndLast(myArr) {
-    var firstItem = myArr[0];
-    var lastItem = myArr[myArr.length - 1];
-    var objOutput = [firstItem, lastItem];
-	myArray.shift();
-	myArray.pop();
-    return objOutput;
-}
-var display = firstAndLast(myArray);
-console.log(display, myArray);
-
 
 $(document).ready(function() {
     $( ".button" ).click(function() {

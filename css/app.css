@@ -449,6 +449,9 @@ h4 {
   font-size: 1.5rem;
   margin: 4rem 0 0 0; }
 
+ul {
+  list-style: none; }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -563,7 +566,7 @@ input[type=number]::-webkit-outer-spin-button {
       border-radius: 5px 5px 0px 0px;
       width: fit-content; }
   .page-container #output-list,
-  .page-container #output-pairs,
+  .page-container #output-pairs-list,
   .page-container #output-reduced,
   .page-container #output-prime,
   .page-container #output-squared,
