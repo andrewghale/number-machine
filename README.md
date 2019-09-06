@@ -8,4 +8,4 @@ This app takes a number and tells you what it is divisible by; I've made it to p
 * The background is called "Graph Paper" from [Hero Patterns](www.heropatterns.com)
 
 
-![Screenshot on 30th August 2019](/img/screencapture6sep.png?raw=true "Screenshot of the Number Machine")
+![Screenshot on 30th August 2019](/img/screencapture6thsept.png?raw=true "Screenshot of the Number Machine")
