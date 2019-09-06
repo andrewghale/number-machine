@@ -10608,13 +10608,12 @@ const guess = document.getElementById('guessField');
 // Button = submit button
 const button = document.getElementById('submitguess');
 
-// Function 1
 // Click event on submit
 button.addEventListener('click', function(e) {
     // prevents page from refreshing
     e.preventDefault();
+    // turns user input into an integer
     const inputValue = parseInt(guess.value);
-    // console.log(guess.value);
     // stops any massive numbers, also stops decimal numbers
     if (inputValue.toString().length >= 10 || inputValue < 2 || !Number.isInteger(Number(guess.value))) {
         const warning = document.querySelector(".warning");

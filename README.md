@@ -5,7 +5,7 @@ This app takes a number and tells you what it is divisible by; I've made it to p
 * Code block styling is done with [Prism.js](https://prismjs.com)
 * The task runner used is [Gulp.js](https://gulpjs.com)
 * [Figma](https://www.figma.com) was used to create the title image
-* The background is called "Graph Paper" from [Hero Patterns](www.heropatterns.com)
+* The background is called "Graph Paper" from [Hero Patterns](https://www.heropatterns.com)
 
 
 ![Screenshot on 30th August 2019](/img/screencapture6thsept.png?raw=true "Screenshot of the Number Machine")
