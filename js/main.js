@@ -20,34 +20,8 @@ button.addEventListener('click', function(e) {
         return;
     };
 
-    // prime number test
-    const testPrime = (inputValue) => {
-        if ( inputValue === 1 ) {
-            return ('false');
-        } else if ( inputValue === 2 ) {
-            return ('true');
-        } else {
-            for ( let i = 2; i < inputValue; i++ ) {
-                if ( inputValue % i === 0 ) {
-                    return ('false');
-                }
-            }
-        return ('true');
-        }
-    }
-
     // array of divisors
     const value = divCalculator(inputValue);
-
-    // pairs of divisors
-    const outputPairs = (value) => {
-        let output = [];
-        for (let i = 0; i <= ((value.length / 2) - 1); i++) {
-            let lastItem = value[(value.length) - 1 - [i]];
-            output.push(["<li>" + value[i] + " and " + lastItem + "</li>"]);
-        };
-        return output.join("");
-    }
 
     // turns the array into a string
     listOutput = value.join(', ');
@@ -58,10 +32,6 @@ button.addEventListener('click', function(e) {
         return reducedOutput;
     }
 
-    // line below not currently needed
-    // const finalValue = commaReplace(andComma);
-
-    // document.getElementById("output-prime").innerHTML = testPrime(value);
     document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(inputValue));
     document.getElementById("output-reduced").innerHTML = reducedOutput(value);
     document.getElementById("output-list").innerHTML = listOutput;
@@ -83,6 +53,32 @@ const divCalculator = (inputValue) => {
         };
     };
     return total;
+}
+
+// prime number test
+const testPrime = (inputValue) => {
+    if ( inputValue === 1 ) {
+        return ('false');
+    } else if ( inputValue === 2 ) {
+        return ('true');
+    } else {
+        for ( let i = 2; i < inputValue; i++ ) {
+            if ( inputValue % i === 0 ) {
+                return ('false');
+            }
+        }
+    return ('true');
+    }
+}
+
+// pairs of divisors
+const outputPairs = (value) => {
+    let output = [];
+    for (let i = 0; i <= ((value.length / 2) - 1); i++) {
+        let lastItem = value[(value.length) - 1 - [i]];
+        output.push(["<li>" + value[i] + " and " + lastItem + "</li>"]);
+    };
+    return output.join("");
 }
 
 const capitalizeFirst = (string) => {
