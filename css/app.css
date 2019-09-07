@@ -433,6 +433,7 @@ body {
   font-size: 18px;
   width: 100%;
   margin: 0;
+  overflow-x: hidden;
   background-color: #dee3de;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232a814f' fill-opacity='0.42'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
 
@@ -462,6 +463,9 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
+input[type=number] {
+  -moz-appearance: textfield; }
+
 .page-container {
   display: flex;
   justify-content: space-evenly;
@@ -470,6 +474,10 @@ input[type=number]::-webkit-outer-spin-button {
   @media screen and (max-width: 1200px) {
     .page-container {
       flex-direction: column; } }
+  @media screen and (max-width: 770px) {
+    .page-container .coffee-ring-bottom-left,
+    .page-container .coffee-ring-bottom-right {
+      display: none; } }
   .page-container .coffee-ring-bottom-right {
     position: absolute;
     top: 1000px;
@@ -514,6 +522,7 @@ input[type=number]::-webkit-outer-spin-button {
       justify-content: center;
       background-color: lightblue;
       width: fit-content;
+      width: -moz-max-content;
       transition: all ease-in-out 0.1s; }
       .page-container .container .github .github-link {
         display: flex;
@@ -561,7 +570,7 @@ input[type=number]::-webkit-outer-spin-button {
           outline: none; }
           .page-container .container .main-form .label .button.submitted {
             background-color: #c21212;
-            color: white;
+            color: #fafafa;
             animation: button-click 0.15s;
             transition: 0s all; }
     .page-container .container .warning {
@@ -581,16 +590,18 @@ input[type=number]::-webkit-outer-spin-button {
       padding: 1rem;
       font-size: 1.3rem;
       border: 2px solid black;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: #fafafa;
       border-bottom: none;
       border-radius: 5px 5px 0px 0px;
-      width: fit-content; }
+      width: fit-content;
+      width: -moz-max-content; }
   .page-container .output {
     margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #fafafa;
     padding: 1rem;
     border: 2px solid black;
-    border-radius: 0px 5px 5px 5px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
     font-size: 2rem; }
 
 .pairs-list {
@@ -601,10 +612,9 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: center;
     flex-grow: 1;
     border-radius: 5px;
-    width: auto;
-    padding: 0.3rem 0;
+    padding: 0.3rem;
     margin: 0.4rem;
-    border: 1.5px solid black;
+    border: 2px solid black;
     box-shadow: 0px 2px 3px 1px #d9d9d9; }
 
 .transition {
