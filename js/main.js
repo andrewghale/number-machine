@@ -77,6 +77,13 @@ const outputPairs = (value) => {
         let lastItem = value[(value.length) - 1 - [i]];
         output.push(["<li>" + value[i] + " and " + lastItem + "</li>"]);
     };
+    if (value.length % 2 !== 0) {
+        output.push(["<li>"
+        + Math.sqrt(value[value.length - 1])
+        + " and "
+        + Math.sqrt(value[value.length - 1])
+        + "</li>"]);
+    }
     return output.join("");
 }
 

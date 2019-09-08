@@ -593,8 +593,8 @@ input[type=number] {
       background-color: #fafafa;
       border-bottom: none;
       border-radius: 5px 5px 0px 0px;
-      width: fit-content;
-      width: -moz-max-content; }
+      width: -moz-max-content;
+      width: fit-content; }
   .page-container .output {
     margin-top: 0;
     background-color: #fafafa;

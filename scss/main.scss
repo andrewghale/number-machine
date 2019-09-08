@@ -145,11 +145,10 @@
             background-color: $white;
             border-bottom: none;
             border-radius: 5px 5px 0px 0px;
-            width: fit-content;
             width: -moz-max-content;
+            width: fit-content;
         }
     }
-
     .output {
         margin-top: 0;
         background-color: $white;
