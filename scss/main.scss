@@ -6,6 +6,16 @@
     @media screen and (max-width: $bp-desktop) {
         flex-direction: column;
     }
+    p {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.04rem;
+        line-height: 2rem;
+        .language-javascript {
+            padding: 0.1rem 0.4rem;
+            font-size: 1.1rem;
+        }
+    }
     .coffee-ring-bottom-left,
     .coffee-ring-bottom-right {
         @media screen and (max-width: $bp-tablet) {
@@ -40,6 +50,10 @@
         padding: 2rem;
         background: $container-bg;
         border-radius: $border-radius;
+        @media screen and (max-width: 1380px) {
+            width: 590px;
+            margin: 0.5rem;
+        }
         @media screen and (max-width: $bp-desktop) {
             margin: 2rem auto;
             width: 92vw;

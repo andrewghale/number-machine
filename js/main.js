@@ -8,9 +8,9 @@ button.addEventListener('click', function(e) {
     // prevents page from refreshing
     e.preventDefault();
     // turns user input into an integer
-    const inputValue = parseInt(guess.value);
+    const input = parseInt(guess.value);
     // stops any massive numbers, also stops decimal numbers
-    if (inputValue.toString().length >= 10 || inputValue < 2 || !Number.isInteger(Number(guess.value))) {
+    if (input.toString().length >= 10 || input < 1 || !Number.isInteger(Number(guess.value))) {
         const warning = document.querySelector(".warning");
         warning.classList.add("show");
         setTimeout(function(){
@@ -20,7 +20,7 @@ button.addEventListener('click', function(e) {
     };
 
     // array of divisors
-    const value = divCalculator(inputValue);
+    const value = makeDivisorArray(input);
 
     // turns the array into a string
     listOutput = value.join(', ');
@@ -30,24 +30,27 @@ button.addEventListener('click', function(e) {
         let reducedOutput = (value.reduce((acc, curr) => acc + curr));
         return reducedOutput;
     }
+    // display all the different outputs
+    // document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(input));
+    const getOutput = document.getElementById.bind(document);
+    getOutput("output-prime").innerHTML = capitalizeFirst(testPrime(input));
+    getOutput("output-reduced").innerHTML = reducedOutput(value);
+    getOutput("output-list").innerHTML = listOutput;
+    getOutput("output-pairs-list").innerHTML = outputPairs(value);
+    getOutput("output-sqrt").innerHTML = Math.sqrt(input);;
+    getOutput("output-squared").innerHTML = Math.pow(input, 2);
+    getOutput("output-cbrt").innerHTML = Math.cbrt(input);
+    getOutput("output-cubed").innerHTML = Math.pow(input, 3);
 
-    document.getElementById("output-prime").innerHTML = capitalizeFirst(testPrime(inputValue));
-    document.getElementById("output-reduced").innerHTML = reducedOutput(value);
-    document.getElementById("output-list").innerHTML = listOutput;
-    document.getElementById("output-pairs-list").innerHTML = outputPairs(value);
-    document.getElementById("output-sqrt").innerHTML = Math.sqrt(inputValue);;
-    document.getElementById("output-squared").innerHTML = (inputValue * inputValue);
-    document.getElementById("output-cbrt").innerHTML = Math.cbrt(inputValue);
-    document.getElementById("output-cubed").innerHTML = (inputValue * inputValue * inputValue);
 });
 
 // This function takes an input number, creates an empty array and loops over
-const divCalculator = (inputValue) => {
+const makeDivisorArray = (input) => {
     // create empty array
     let total = [];
     // loop over each number to find divisors
-    for (let i = 1; i <= inputValue; i++) {
-        if (inputValue % i === 0) {
+    for (let i = 1; i <= input; i++) {
+        if (input % i === 0) {
             total.push(i);
         };
     };
@@ -55,14 +58,14 @@ const divCalculator = (inputValue) => {
 }
 
 // prime number test
-const testPrime = (inputValue) => {
-    if ( inputValue === 1 ) {
+const testPrime = (input) => {
+    if ( input === 1 ) {
         return ('false');
-    } else if ( inputValue === 2 ) {
+    } else if ( input === 2 ) {
         return ('true');
     } else {
-        for ( let i = 2; i < inputValue; i++ ) {
-            if ( inputValue % i === 0 ) {
+        for ( let i = 2; i < input; i++ ) {
+            if ( input % i === 0 ) {
                 return ('false');
             }
         }
@@ -72,26 +75,15 @@ const testPrime = (inputValue) => {
 
 // pairs of divisors
 const outputPairs = (value) => {
+    const { length } = value;
     let output = [];
-    for (let i = 0; i <= ((value.length / 2) - 1); i++) {
-        let lastItem = value[(value.length) - 1 - [i]];
-        output.push([
-            "<li>"
-            + value[i]
-            + " and "
-            + lastItem
-            + "</li>"
-        ]);
+    for (let i = 0; i <= ((length / 2) - 1); i++) {
+        let lastItem = value[(length) - 1 - [i]];
+        output.push([`<li>${value[i]} and ${lastItem}</li>`]);
     };
     if (value.length % 2 !== 0) {
-        const squareRoot = Math.sqrt(value[value.length - 1]);
-        output.push([
-            "<li>"
-            + squareRoot
-            + " and "
-            + squareRoot
-            + "</li>"
-        ]);
+        const squareRoot = Math.sqrt(value[length - 1]);
+        output.push([`<li>${squareRoot} and ${squareRoot}</li>`]);
     }
     return output.join("");
 }

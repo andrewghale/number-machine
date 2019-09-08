@@ -474,6 +474,14 @@ input[type=number] {
   @media screen and (max-width: 1200px) {
     .page-container {
       flex-direction: column; } }
+  .page-container p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.04rem;
+    line-height: 2rem; }
+    .page-container p .language-javascript {
+      padding: 0.1rem 0.4rem;
+      font-size: 1.1rem; }
   @media screen and (max-width: 770px) {
     .page-container .coffee-ring-bottom-left,
     .page-container .coffee-ring-bottom-right {
@@ -502,6 +510,10 @@ input[type=number] {
     padding: 2rem;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 5px; }
+    @media screen and (max-width: 1380px) {
+      .page-container .container {
+        width: 590px;
+        margin: 0.5rem; } }
     @media screen and (max-width: 1200px) {
       .page-container .container {
         margin: 2rem auto;

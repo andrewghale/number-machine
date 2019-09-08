@@ -30,7 +30,7 @@
                     class="guessSubmit button" id="submitguess" />
                 </label>
             </form>
-            <div class="warning">Whole numbers between 2 and 999999999 only!</div>
+            <div class="warning">Whole numbers between 1 and 999999999 only!</div>
             <div class="output-label">Is Prime?</div>
             <p id="output-prime" class="output">
                 Enter a number above!
@@ -68,36 +68,44 @@
             <div class="explain-container">
                 <h3>How (Some Of) It Works</h3>
                 <h4>Creating the array</h4>
-                <p>This function checks whether the input value can be divided by the current iteration [i] without leaving
-                    a remainder - if it can, then the number [i] is added on to the end of an array named "total".</p>
+                <p>This function checks whether the <code class="language-javascript">input</code> value can be divided by the current iteration <code class="language-javascript">[i]</code> without leaving
+                    a remainder - if it can, then the number <code class="language-javascript">[i]</code> is added on to the end of an array named <code class="language-javascript">total</code>.</p>
                 <div class="code-container">
                     <pre>
                         <code class="language-javascript">
-const divCalculator = (inputValue<) => {
+const divCalculator = (input) => {
     let total = [];
-    for (let i = 1; i <= inputValue; i++) {
-        if (inputValue % i === 0) {
+    for (let i = 1; i <= input; i++) {
+        if (input % i === 0) {
             total.push(i);
         };
     };
     return total;
 }
+// if inputValue is 12, total = [1, 2, 3, 4, 6, 12]
+// if inputValue is 319, total = [1, 11, 29, 319]
                         </code>
                     </pre>
                 </div>
                 <h4>Prime Numbers</h4>
-                <p>This function checks to see if the input value is a prime number.</p>
+                <p>
+                    This function checks to see if the <code class="language-javascript">input</code> value is a prime number.
+                </p>
+                <p>
+                    Inputting 1 and 2 will simply return "False" and "True" respectively but for any number greater than 2, if it can be divided by the current iteration <code class="language-javascript">[i]</code>,
+                    it won't be a prime number, so the output is false.
+                </p>
                 <div class="code-container">
                     <pre>
                         <code class="language-javascript">
-const testPrime = (inputValue) => {
-    if ( inputValue === 1 ) {
+const testPrime = (input) => {
+    if ( input === 1 ) {
         return ('false');
-    } else if ( inputValue === 2 ) {
+    } else if ( input === 2 ) {
         return ('true');
     } else {
-        for ( let i = 2; i < inputValue; i++ ) {
-            if ( inputValue % i === 0 ) {
+        for ( let i = 2; i < input; i++ ) {
+            if ( input % i === 0 ) {
                 return ('false');
             }
         }
