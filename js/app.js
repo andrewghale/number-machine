@@ -10704,17 +10704,21 @@ for (let i = 0; i < itMarg.length; i++ ){
     }
 }
 
-$(document).ready(function() {
-    $( ".button" ).click(function() {
-        $( ".button" ).addClass( "submitted" );
+// submit button transitions
+const submitTransition = document.getElementById('submitguess');
+const githubTransition = document.getElementById('github');
+
+submitTransition.addEventListener('click', function(e) {
+    this.classList.add("submitted");
         setTimeout(function() {
-            $( '.button' ).removeClass( 'submitted' );
-        },500);
-    });
-    $(".github").hover(function() {
-        $(this).addClass('transition');
-    }, function() {
-        $(this).removeClass('transition');
-    });
+        submitTransition.classList.remove("submitted");
+    }, 500);
 });
+githubTransition.addEventListener("mouseover", function(e) {
+    this.classList.add("transition");
+});
+githubTransition.addEventListener("mouseout", function(e) {
+    this.classList.remove("transition");
+});
+
 //# sourceMappingURL=app.js.map

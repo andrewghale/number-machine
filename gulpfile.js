@@ -10,7 +10,7 @@ var plumber = require("gulp-plumber");
 
 gulp.task("concatScripts", function () {
   return gulp
-    .src(["js/jquery.js", "js/prism.js", "js/main.js"])
+    .src(["js/prism.js", "js/main.js"])
     .pipe(plumber())
     .pipe(maps.init())
     .pipe(concat("app.js"))
