@@ -10646,10 +10646,10 @@ button.addEventListener('click', function(e) {
     getOutput("output-squared").innerHTML = Math.pow(input, 2);
     getOutput("output-cbrt").innerHTML = Math.cbrt(input);
     getOutput("output-cubed").innerHTML = Math.pow(input, 3);
-
 });
 
-// This function takes an input number, creates an empty array and loops over
+// This function takes an input number, creates an empty array and loops
+// over from 1 until that number, adding divisors to an array
 const makeDivisorArray = (input) => {
     // create empty array
     let total = [];
@@ -10686,7 +10686,7 @@ const outputPairs = (value) => {
         let lastItem = value[(length) - 1 - [i]];
         output.push([`<li>${value[i]} and ${lastItem}</li>`]);
     };
-    if (value.length % 2 !== 0) {
+    if (length % 2 !== 0) {
         const squareRoot = Math.sqrt(value[length - 1]);
         output.push([`<li>${squareRoot} and ${squareRoot}</li>`]);
     }
@@ -10695,6 +10695,13 @@ const outputPairs = (value) => {
 
 const capitalizeFirst = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+let itMarg = document.getElementsByTagName('code');
+for (let i = 0; i < itMarg.length; i++ ){
+    if ( itMarg[i].innerHTML == '[i]'){
+        itMarg[i].setAttribute("style", "margin: 0 0.2rem");
+    }
 }
 
 $(document).ready(function() {

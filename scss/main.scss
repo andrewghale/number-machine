@@ -26,6 +26,9 @@
         position: absolute;
         top: 1000px;
         right: -150px;
+        // @media screen and (max-width: $bp-tablet) {
+        //     display: none;
+        // }
         img {
             max-width: 500px;
             opacity: 0.3;
@@ -59,7 +62,7 @@
             width: 92vw;
         }
         @media screen and (max-width: $bp-tablet) {
-            margin: 1rem;
+            margin: 1rem auto;
         }
         .title {
             width: 100%;
@@ -192,4 +195,8 @@
 .transition {
     transform: scale(1.07);
     transition: all ease-in-out 0.1s;
+}
+
+.iteration-margin {
+    margin-right: 1rem;
 }

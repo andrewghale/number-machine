@@ -520,7 +520,7 @@ input[type=number] {
         width: 92vw; } }
     @media screen and (max-width: 770px) {
       .page-container .container {
-        margin: 1rem; } }
+        margin: 1rem auto; } }
     .page-container .container .title {
       width: 100%; }
     .page-container .container .created-by {
@@ -632,5 +632,8 @@ input[type=number] {
 .transition {
   transform: scale(1.07);
   transition: all ease-in-out 0.1s; }
+
+.iteration-margin {
+  margin-right: 1rem; }
 
 /*# sourceMappingURL=app.css.map */
